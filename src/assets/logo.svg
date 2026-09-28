@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Upper arc for EASY SHARE SERVICES -->
+    <path id="topRingPath" d="M 60,250 A 190,190 0 0,1 440,250" fill="none"/>
+    <!-- Lower arc for RESEARCH ANALYST -->
+    <path id="bottomRingPath" d="M 85,250 A 165,165 0 0,0 415,250" fill="none"/>
+    
+    <!-- Filter for crisp drop subtle rendering -->
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="500" height="500" fill="#ffffff" rx="250"/>
+
+  <!-- Outer Double Border -->
+  <circle cx="250" cy="250" r="236" fill="#ffffff" stroke="#0a2540" stroke-width="4.5"/>
+  <circle cx="250" cy="250" r="162" fill="#ffffff" stroke="#0a2540" stroke-width="3"/>
+
+  <!-- Top Text: EASY SHARE SERVICES -->
+  <text font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-weight="900" font-size="26" fill="#0a2540" letter-spacing="2.5">
+    <textPath href="#topRingPath" startOffset="50%" text-anchor="middle">
+      EASY SHARE SERVICES
+    </textPath>
+  </text>
+
+  <!-- Left & Right Separator Stars -->
+  <!-- Left Star at 9 o'clock -->
+  <g fill="#0a2540" transform="translate(56, 250) scale(1)">
+    <polygon points="0,-12 3.7,-3.7 12.6,-3.7 5.4,1.4 8.2,9.7 0,4.6 -8.2,9.7 -5.4,1.4 -12.6,-3.7 -3.7,-3.7"/>
+  </g>
+  <!-- Right Star at 3 o'clock -->
+  <g fill="#0a2540" transform="translate(444, 250) scale(1)">
+    <polygon points="0,-12 3.7,-3.7 12.6,-3.7 5.4,1.4 8.2,9.7 0,4.6 -8.2,9.7 -5.4,1.4 -12.6,-3.7 -3.7,-3.7"/>
+  </g>
+
+  <!-- Bottom Text: RESEARCH ANALYST -->
+  <text font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#0a2540" letter-spacing="3.5">
+    <textPath href="#bottomRingPath" startOffset="50%" text-anchor="middle">
+      RESEARCH ANALYST
+    </textPath>
+  </text>
+
+  <!-- CENTER LOGO EMBLEM -->
+  <g id="center-emblem">
+    <!-- Chart Background Arc -->
+    <path d="M 168,226 C 158,190 178,145 218,128" fill="none" stroke="#0284c7" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Financial Bar Chart (Ascending) -->
+    <!-- Bar 1 (Left / Lowest) -->
+    <rect x="182" y="192" width="15" height="34" rx="3" fill="#0a2540"/>
+    <!-- Bar 2 -->
+    <rect x="204" y="172" width="15" height="54" rx="3" fill="#0284c7"/>
+    <!-- Bar 3 -->
+    <rect x="226" y="150" width="15" height="76" rx="3" fill="#f97316"/>
+    <!-- Bar 4 (Right / Highest) -->
+    <rect x="248" y="126" width="15" height="100" rx="3" fill="#ea580c"/>
+
+    <!-- Upward Dynamic Arrow (Growth Swoosh) -->
+    <path d="M 166,226 C 185,224 235,212 284,136" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round"/>
+    <!-- Arrowhead pointing up-right -->
+    <polygon points="296,122 272,126 286,145" fill="#ea580c"/>
+
+    <!-- Brand Typography inside inner circle -->
+    <text x="250" y="260" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-weight="900" font-size="27" fill="#0a2540" letter-spacing="1.5">
+      EASY SHARE
+    </text>
+    <text x="250" y="284" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-weight="800" font-size="16" fill="#0a2540" letter-spacing="4.5">
+      SERVICES
+    </text>
+
+    <!-- Colored accent line under text -->
+    <rect x="208" y="295" width="40" height="4" rx="2" fill="#ea580c"/>
+    <rect x="252" y="295" width="40" height="4" rx="2" fill="#0284c7"/>
+  </g>
+</svg>

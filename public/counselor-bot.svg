@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Signature Easy AI Academia Emerald Theme -->
+    <linearGradient id="academiaTheme" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05593a" />
+      <stop offset="35%" stop-color="#033d26" />
+      <stop offset="70%" stop-color="#022819" />
+      <stop offset="100%" stop-color="#011910" />
+    </linearGradient>
+
+    <!-- Top-Right Radiant Glow matching our brand logo -->
+    <radialGradient id="academiaGlow" cx="82%" cy="18%" r="65%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.55" />
+      <stop offset="40%" stop-color="#059669" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#022819" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Themed Background: Easy AI Forest-to-Midnight Emerald with Glow -->
+  <rect width="512" height="512" fill="url(#academiaTheme)" />
+  <rect width="512" height="512" fill="url(#academiaGlow)" />
+
+  <!-- 2. Robot Mascot (Converted to Easy AI Academia Theme) -->
+  <g id="robot-mascot">
+    <!-- Antenna Ball -->
+    <circle cx="256" cy="132" r="14" fill="#FFFFFF" />
+
+    <!-- Antenna Stem -->
+    <rect x="250" y="142" width="12" height="30" rx="6" fill="#FFFFFF" />
+
+    <!-- Left Ear Bump -->
+    <rect x="120" y="222" width="36" height="68" rx="18" fill="#FFFFFF" />
+
+    <!-- Right Ear Bump -->
+    <rect x="356" y="222" width="36" height="68" rx="18" fill="#FFFFFF" />
+
+    <!-- Main Head Chassis (Stadium rounded rectangle) -->
+    <rect x="142" y="168" width="228" height="176" rx="88" ry="88" fill="#FFFFFF" />
+
+    <!-- Inner Face Cutout (Reveals the signature theme color) -->
+    <rect x="174" y="196" width="164" height="120" rx="58" ry="58" fill="url(#academiaTheme)" />
+    <rect x="174" y="196" width="164" height="120" rx="58" ry="58" fill="url(#academiaGlow)" />
+
+    <!-- Two Iconic Pill Eyes (Pure White) -->
+    <!-- Left Eye -->
+    <rect x="214" y="239" width="20" height="34" rx="10" fill="#FFFFFF" />
+
+    <!-- Right Eye -->
+    <rect x="278" y="239" width="20" height="34" rx="10" fill="#FFFFFF" />
+  </g>
+</svg>

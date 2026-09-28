@@ -1,0 +1,6 @@
+{
+  "name": "Easy AI Academia",
+  "description": "Practical AI Education & Career Skills for Students, Graduates & Professionals. Learn AI, build skills, and create your future with offline, online, and hybrid courses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

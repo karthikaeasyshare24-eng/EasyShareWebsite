@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Squircle background gradient: Deep emerald forest -->
+    <linearGradient id="tileGradIcon" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#04563B" />
+      <stop offset="30%" stop-color="#023826" />
+      <stop offset="100%" stop-color="#011B12" />
+    </linearGradient>
+
+    <!-- Radial top-right glow on the squircle -->
+    <radialGradient id="tileGlowIcon" cx="72%" cy="22%" r="65%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.35" />
+      <stop offset="65%" stop-color="#04563B" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Orbital ring gradient: Vibrant cyan/mint to emerald -->
+    <linearGradient id="orbitGradIcon" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="35%" stop-color="#10E599" />
+      <stop offset="70%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#6EE7B7" />
+    </linearGradient>
+
+    <filter id="ringGlowIcon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. The Icon Squircle Tile -->
+  <rect x="26" y="26" width="460" height="460" rx="105" ry="105" fill="url(#tileGradIcon)" />
+  <rect x="26" y="26" width="460" height="460" rx="105" ry="105" fill="url(#tileGlowIcon)" />
+
+  <!-- 2. Inside emblem scaled to 512x512 -->
+  <g transform="translate(-10, 0)">
+    <!-- Back portion of orbit behind the A -->
+    <path d="M 175 325 C 130 270 185 185 355 165 C 430 155 480 175 485 195" 
+          fill="none" stroke="url(#orbitGradIcon)" stroke-width="14" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Letter "A" in solid crisp white -->
+    <path d="M 266 105 
+             C 272 105 278 109 281 116
+             L 418 385 
+             C 421 392 417 399 409 399 
+             L 350 399 
+             C 343 399 337 395 334 389
+             L 307 332 
+             L 225 332 
+             L 198 389 
+             C 195 395 189 399 182 399 
+             L 123 399 
+             C 115 399 111 392 114 385 
+             L 251 116 
+             C 254 109 260 105 266 105 Z
+             M 266 172
+             L 242 283
+             L 290 283 Z" 
+          fill="#FFFFFF" />
+
+    <!-- Dynamic Orbital Swoosh Ring (Curving across the front of the A) -->
+    <path d="M 75 340 
+             C 70 355 96 382 155 382 
+             C 245 382 362 313 442 207 
+             C 456 188 450 175 437 180
+             C 421 187 395 207 341 255
+             C 261 324 171 362 112 354
+             C 91 351 77 337 75 340 Z" 
+          fill="url(#orbitGradIcon)" filter="url(#ringGlowIcon)" />
+
+    <!-- Sparkle Star at upper right of the A -->
+    <path d="M 396 78 
+             Q 396 121 356 121 
+             Q 396 121 396 164 
+             Q 396 121 436 121 
+             Q 396 121 396 78 Z" 
+          fill="#4ADE80" filter="url(#ringGlowIcon)" />
+    <!-- Center glimmer -->
+    <circle cx="396" cy="121" r="3.5" fill="#FFFFFF" />
+  </g>
+</svg>

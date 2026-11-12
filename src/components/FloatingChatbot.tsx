@@ -32,13 +32,16 @@ interface ChatMessage {
 }
 
 const QUICK_PROMPTS = [
-  { label: '🎓 College & Placements', query: 'What courses are available for college students and graduates?' },
+  { label: '💻 AI, Coding & GenAI', query: 'What courses are in AI, Coding & GenAI?' },
+  { label: '🛡️ Cybersecurity & Hacking', query: 'Tell me about Cybersecurity & Ethical Hacking courses.' },
+  { label: '📊 Data Science, ML & NLP', query: 'What courses are available in Data Science, ML & NLP?' },
+  { label: '🧭 More Pathways to Success', query: 'Show me the tracks in More Pathways to Success.' },
+  { label: '🎓 College Students', query: 'What courses are available for college students?' },
   { label: '🏫 School Students', query: 'Tell me about AI courses for school kids (grades 6-12).' },
   { label: '💼 Working Professionals', query: 'What AI tools will I learn in the Professionals bootcamp?' },
-  { label: '🚀 Final-Year Projects', query: 'How do you assist with final-year academic projects?' },
   { label: '🗣️ Spoken English & Hindi', query: 'What are the fees and duration for spoken communication?' },
-  { label: '⭐ Combo Bundles & Fees', query: 'Show me all course fees and combo bundle discounts.' },
-  { label: '📞 Call or WhatsApp Helpline', query: 'How can I contact admissions or Coach Rajeshwara Pandian?' }
+  { label: '🚀 Final-Year Projects', query: 'How do you assist with final-year academic projects?' },
+  { label: '⭐ Combo Bundles & Fees', query: 'Show me all course fees and combo bundle discounts.' }
 ];
 
 export default function FloatingChatbot() {
@@ -53,7 +56,7 @@ export default function FloatingChatbot() {
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: "👋 Hello! I am your **Easy AI Academia Counselor**.\n\nI can assist you with:\n• Course details, syllabus & eligibility\n• Tuition fees & combo discounts\n• Final-year project guidance & viva prep\n• Batch timings & training modes (Offline / Online / Hybrid)\n\nWhat would you like to explore today?",
+      text: "👋 Hello! I am your **Mumbai Ai Academia Counselor**.\n\nI can assist you with:\n• Course details, syllabus & eligibility\n• Tuition fees & combo discounts\n• Final-year project guidance & viva prep\n• Batch timings & training modes (Offline / Online / Hybrid)\n\nWhat would you like to explore today?",
       actions: [
         { label: 'View College Tracks', type: 'link', url: '/courses/college' },
         { label: 'Final-Year Projects', type: 'link', url: '/projects' },
@@ -79,6 +82,237 @@ export default function FloatingChatbot() {
   // Client-side knowledge engine fallback in case the API route is unreachable
   const getClientFallbackResponse = (query: string): { text: string; actions?: ChatMessage['actions'] } => {
     const q = query.toLowerCase();
+
+    // Category check: AI, Coding & GenAI
+    if (
+      q.includes('ai, coding') ||
+      q.includes('ai coding') ||
+      q.includes('coding') ||
+      q.includes('genai') ||
+      q.includes('python') ||
+      q.includes('agentic') ||
+      q.includes('rag') ||
+      q.includes('langchain') ||
+      q.includes('prompt engineering') ||
+      q.includes('fine-tuning')
+    ) {
+      return {
+        text: "💻 **Category: AI, Coding & GenAI (Developer Track)**\n\n" +
+          "Here is the complete course list in this category:\n\n" +
+          "1. **Python & AI Foundations** (30 Hrs | ₹6,000)\n" +
+          "2. **GenAI-Assisted Coding & Developer Tools** (30 Hrs | ₹6,000)\n" +
+          "3. **Object-Oriented Programming (OOPs) in Python** (30 Hrs | ₹6,000)\n" +
+          "4. **NoSQL & MongoDB for AI Systems** (30 Hrs | ₹6,000)\n" +
+          "5. **Prompt Engineering Mastery** (30 Hrs | ₹6,000)\n" +
+          "6. **Generative AI & Agentic AI Foundations** (36 Hrs | ₹7,000)\n" +
+          "7. **Explainable AI (XAI)** (30 Hrs | ₹6,000)\n" +
+          "8. **RAG & Vector DBs** (36 Hrs | ₹7,000)\n" +
+          "9. **LangChain & LlamaIndex** (36 Hrs | ₹7,000)\n" +
+          "10. **Fine-Tuning Open-Source LLMs** (40 Hrs | ₹8,000)\n\n" +
+          "All courses feature hands-on codebases, API integrations, and capstones.",
+        actions: [
+          { label: 'View AI & Coding Track', type: 'link', url: '/courses/ai-coding' },
+          { label: 'Enroll for ₹6,000', type: 'link', url: '/contact' }
+        ]
+      };
+    }
+
+    // Category check: Cybersecurity & Ethical Hacking
+    if (
+      q.includes('cybersecurity') ||
+      q.includes('ethical hacking') ||
+      q.includes('hacking') ||
+      q.includes('vapt') ||
+      q.includes('pentesting') ||
+      q.includes('soc') ||
+      q.includes('wireshark') ||
+      q.includes('security')
+    ) {
+      return {
+        text: "🛡️ **Category: Cybersecurity & Ethical Hacking (Security & VAPT Track)**\n\n" +
+          "Here is the complete course list in this category:\n\n" +
+          "1. **Networking & Infrastructure for Security** (30 Hrs | ₹6,000)\n" +
+          "2. **Linux Mastery for Hackers** (30 Hrs | ₹6,000)\n" +
+          "3. **Python Scripting for Cybersecurity** (30 Hrs | ₹6,000)\n" +
+          "4. **Ethical Hacking & Recon (CEH)** (36 Hrs | ₹7,000)\n" +
+          "5. **Web App Penetration Testing (OWASP)** (36 Hrs | ₹7,000)\n" +
+          "6. **Network Security & Wireshark** (30 Hrs | ₹6,000)\n" +
+          "7. **VAPT (Nessus & Metasploit)** (36 Hrs | ₹7,000)\n" +
+          "8. **SOC Operations & SIEM** (36 Hrs | ₹7,000)\n" +
+          "9. **Cloud Security & DevSecOps** (30 Hrs | ₹6,000)",
+        actions: [
+          { label: 'View Cybersecurity Track', type: 'link', url: '/courses/cybersecurity' },
+          { label: 'Talk to Security Mentor', type: 'whatsapp', url: CONTACT_INFO.whatsappUrl }
+        ]
+      };
+    }
+
+    // Category check: Data Science, ML & NLP
+    if (
+      q.includes('data science') ||
+      q.includes('machine learning') ||
+      q.includes('ml') ||
+      q.includes('nlp') ||
+      q.includes('deep learning') ||
+      q.includes('computer vision') ||
+      q.includes('power bi') ||
+      q.includes('statistics')
+    ) {
+      return {
+        text: "📊 **Category: Data Science, ML & NLP (AI & Analytics Track)**\n\n" +
+          "Here is the complete course list in this category:\n\n" +
+          "1. **Python for Data Science (NumPy, Pandas)** (30 Hrs | ₹6,000)\n" +
+          "2. **Advanced SQL & Database Analytics** (30 Hrs | ₹6,000)\n" +
+          "3. **Power BI & Data Storytelling** (30 Hrs | ₹6,000)\n" +
+          "4. **Mathematics & Stats for Data Science** (30 Hrs | ₹6,000)\n" +
+          "5. **Machine Learning Algorithms & Scikit-Learn** (36 Hrs | ₹7,000)\n" +
+          "6. **Deep Learning with PyTorch** (36 Hrs | ₹7,000)\n" +
+          "7. **NLP & Transformer Models (BERT)** (36 Hrs | ₹7,000)\n" +
+          "8. **Computer Vision & OpenCV** (36 Hrs | ₹7,000)\n" +
+          "9. **Big Data Analytics with Spark** (36 Hrs | ₹7,000)\n" +
+          "10. **Predictive Analytics Capstone** (36 Hrs | ₹8,000)\n" +
+          "11. **Cloud & AWS for Data & AI** (36 Hrs | ₹7,000)",
+        actions: [
+          { label: 'View Data Science Track', type: 'link', url: '/courses/data-science' },
+          { label: 'Enroll Now', type: 'link', url: '/contact' }
+        ]
+      };
+    }
+
+    // Category check: More Pathways to Success
+    if (
+      q.includes('pathway') ||
+      q.includes('pathways') ||
+      q.includes('investment banking') ||
+      q.includes('share market') ||
+      q.includes('banking') ||
+      q.includes('taxation') ||
+      q.includes('tax') ||
+      q.includes('commerce') ||
+      q.includes('marketing')
+    ) {
+      return {
+        text: "🧭 **Category: More Pathways to Success (Finance, Commerce & Growth)**\n\n" +
+          "Here are the specialized tracks available in this category:\n\n" +
+          "1. **Track A: Investment Banking & Financial Markets**\n" +
+          "2. **Track B: Share Market & Modern Banking Operations**\n" +
+          "3. **Track C: Taxation & Business Commerce (GST, TDS)**\n" +
+          "4. **Track D: Marketing & Business Development**\n" +
+          "5. **Track E: Career Guidance & Placement Acceleration**\n" +
+          "6. **Track F: Professional Communication & Soft Skills**",
+        actions: [
+          { label: 'Explore Pathways Tracks', type: 'link', url: '/courses/pathways' },
+          { label: 'Counseling Call', type: 'tel', url: `tel:${CONTACT_INFO.callPhone}` }
+        ]
+      };
+    }
+
+    // Category check: Business Management
+    if (
+      q.includes('business management') ||
+      q.includes('management essentials') ||
+      q.includes('entrepreneurship') ||
+      q.includes('startup') ||
+      q.includes('digital marketing')
+    ) {
+      return {
+        text: "💼 **Category: Business Management**\n\n" +
+          "Here are our specialized programs in Business Management:\n\n" +
+          "1. **Business Management Essentials** (40 Hours | ₹8,000)\n" +
+          "   • Modules: Strategic Planning, Financial Fundamentals (P&L), People Leadership, Operations, Risk Assessment.\n\n" +
+          "2. **Digital Marketing & Analytics** (35 Hours | ₹7,000)\n" +
+          "   • Modules: Omnichannel Funnels, SEO, Meta & Google Ads, GA4 Analytics, Marketing Automation.\n\n" +
+          "3. **Entrepreneurship & Startup Strategy** (36 Hours | ₹7,500)\n" +
+          "   • Modules: Market Validation, Lean Canvas, Unit Economics & Runway, Investor Pitch Deck.\n\n" +
+          "Modes: Offline • Online • Hybrid",
+        actions: [
+          { label: 'View Business Track', type: 'link', url: '/courses/business-management' },
+          { label: 'Enroll Now', type: 'link', url: '/contact' }
+        ]
+      };
+    }
+
+    // Category check: Design & Creative Technology
+    if (
+      q.includes('design') ||
+      q.includes('creative technology') ||
+      q.includes('ui/ux') ||
+      q.includes('ui ux') ||
+      q.includes('figma') ||
+      q.includes('motion graphics') ||
+      q.includes('video editing') ||
+      q.includes('3d modeling') ||
+      q.includes('blender')
+    ) {
+      return {
+        text: "🎨 **Category: Design & Creative Technology**\n\n" +
+          "Here are our creative technology courses:\n\n" +
+          "1. **UI/UX Design with Figma** (36 Hours | ₹7,500)\n" +
+          "   • Modules: User Research, Wireframing, Auto Layout & Components, Interactive Prototyping, Usability Testing.\n\n" +
+          "2. **Motion Graphics & Video Editing** (32 Hours | ₹6,500)\n" +
+          "   • Modules: Timeline Editing, Keyframe Animation & Kinetic Typography, Sound Design, AI Tools, Social Exports.\n\n" +
+          "3. **3D Modeling & Generative Creative Tools** (30 Hours | ₹7,000)\n" +
+          "   • Modules: Blender Foundations, UV Mapping & Shaders, Midjourney & Stable Diffusion, Asset Export for Web & AR.\n\n" +
+          "Modes: Offline • Online • Hybrid",
+        actions: [
+          { label: 'View Design Track', type: 'link', url: '/courses/design-creative' },
+          { label: 'Enroll Now', type: 'link', url: '/contact' }
+        ]
+      };
+    }
+
+    // Category check: Engineering & Robotics
+    if (
+      q.includes('engineering & robotics') ||
+      q.includes('engineering and robotics') ||
+      q.includes('robotics') ||
+      q.includes('arduino') ||
+      q.includes('iot') ||
+      q.includes('cad') ||
+      q.includes('drone') ||
+      q.includes('embedded')
+    ) {
+      return {
+        text: "🤖 **Category: Engineering & Robotics**\n\n" +
+          "Here are our hands-on hardware and robotics courses:\n\n" +
+          "1. **Robotics with Arduino & Sensors** (45 Hours | ₹9,000)\n" +
+          "   • Modules: Microcontroller Architecture, Sensor Integration, Motor Drivers & Actuators, Obstacle Avoidance & Bluetooth Control.\n\n" +
+          "2. **IoT & CAD for Engineers** (40 Hours | ₹8,500)\n" +
+          "   • Modules: 3D CAD Modeling (Fusion 360), ESP32 & Cloud IoT, MQTT Protocols, PCB Schematic Basics.\n\n" +
+          "3. **Drone Technology & Embedded Flight Control** (36 Hours | ₹8,000)\n" +
+          "   • Modules: Quadcopter Aerodynamics, Flight Controller Configuration, Sensor Calibration & Gyroscopes, Telemetry & Safety.\n\n" +
+          "Modes: Offline • Online • Hybrid",
+        actions: [
+          { label: 'View Robotics Track', type: 'link', url: '/courses/engineering-robotics' },
+          { label: 'Enroll Now', type: 'link', url: '/contact' }
+        ]
+      };
+    }
+
+    // Category list query
+    if (q.includes('category') || q.includes('categories') || q.includes('all courses') || q.includes('list of courses') || q.includes('what courses')) {
+      return {
+        text: "📚 **Mumbai Ai Academia — Course Categories:**\n\n" +
+          "1. 💼 **Business Management** (Essentials, Digital Marketing, Startup Strategy)\n" +
+          "2. 🎨 **Design & Creative Technology** (UI/UX Figma, Motion Graphics, 3D Modeling)\n" +
+          "3. 🤖 **Engineering & Robotics** (Arduino Robotics, IoT & CAD, Drone Tech)\n" +
+          "4. 💻 **AI, Coding & GenAI** (10 courses: Python, OOPs, MongoDB, Prompt Eng, Agentic AI, RAG, LangChain, Fine-Tuning)\n" +
+          "5. 🛡️ **Cybersecurity & Ethical Hacking** (9 courses: Networking, Linux, CEH, Pentesting, Wireshark, VAPT, SOC)\n" +
+          "6. 📊 **Data Science, ML & NLP** (11 courses: Python, SQL, Power BI, ML, PyTorch, CV, Transformers)\n" +
+          "7. 🧭 **More Pathways to Success** (6 tracks: Investment Banking, Share Market, Tax, Marketing, Career Guidance)\n" +
+          "8. 🏫 **School Students** (AI Basics, Study Partner)\n" +
+          "9. 🎓 **College Students** (GenAI Foundations, Career & Project Mentor)\n" +
+          "10. 💼 **Working Professionals** (Productivity Bootcamp)\n" +
+          "11. 🗣️ **Spoken Skills** (English & Hindi)\n" +
+          "12. 🚀 **Final-Year Projects** & ⭐ **Combos**\n\n" +
+          "Type any category name to see its full course list!",
+        actions: [
+          { label: 'AI & Coding Track', type: 'link', url: '/courses/ai-coding' },
+          { label: 'Cybersecurity Track', type: 'link', url: '/courses/cybersecurity' },
+          { label: 'Data Science Track', type: 'link', url: '/courses/data-science' }
+        ]
+      };
+    }
 
     if (q.includes('school') || q.includes('kid') || q.includes('child') || q.includes('class 6') || q.includes('grade')) {
       return {
@@ -183,7 +417,7 @@ export default function FloatingChatbot() {
 
     if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('whatsapp') || q.includes('number') || q.includes('helpline') || q.includes('reach')) {
       return {
-        text: "📞 **Easy AI Academia Official Contact:**\n\n" +
+        text: "📞 **Mumbai Ai Academia Official Contact:**\n\n" +
           `• **Calling Helpline:** +91 ${CONTACT_INFO.callPhone} (Direct Line)\n` +
           `• **WhatsApp Admissions:** +91 ${CONTACT_INFO.whatsappNumber}\n` +
           `• **Email:** ${CONTACT_INFO.email}\n` +
@@ -199,7 +433,7 @@ export default function FloatingChatbot() {
     if (q.includes('coach') || q.includes('teacher') || q.includes('trainer') || q.includes('rajeshwara')) {
       return {
         text: "👨‍🏫 **About Coach Rajeshwara Pandian:**\n\n" +
-          "• **Lead Mentor & Founder**, Easy AI Academia\n" +
+          "• **Lead Mentor & Founder**, Mumbai Ai Academia\n" +
           "• **Credentials:** AI Literacy Coach | Career Coach | Business AI Trainer\n" +
           "• **Experience:** 15+ years of real-world coaching\n" +
           "• **Philosophy:** LEARN → PRACTICE → BUILD → GROW. Practical hands-on training with zero confusing jargon!",
@@ -211,7 +445,7 @@ export default function FloatingChatbot() {
     }
 
     return {
-      text: "Thank you for reaching out! At Easy AI Academia, we offer practical courses across:\n\n" +
+      text: "Thank you for reaching out! At Mumbai Ai Academia, we offer practical courses across:\n\n" +
         "• 🎓 **College Students** (GenAI Foundations ₹2,999 & Career Mentor ₹7,999)\n" +
         "• 🏫 **School Students** (AI Basics ₹2,500 & Study Partner ₹10,000)\n" +
         "• 💼 **Working Professionals** (AI Productivity Bootcamp ₹2,499)\n" +
@@ -261,6 +495,18 @@ export default function FloatingChatbot() {
           const lowerReply = data.reply.toLowerCase();
           const dynamicActions: ChatMessage['actions'] = [];
 
+          if (lowerReply.includes('ai, coding') || lowerReply.includes('ai-coding') || lowerReply.includes('genai') || lowerReply.includes('coding')) {
+            dynamicActions.push({ label: 'AI & Coding Courses', type: 'link', url: '/courses/ai-coding' });
+          }
+          if (lowerReply.includes('cybersecurity') || lowerReply.includes('ethical hacking') || lowerReply.includes('cyber')) {
+            dynamicActions.push({ label: 'Cybersecurity Courses', type: 'link', url: '/courses/cybersecurity' });
+          }
+          if (lowerReply.includes('data science') || lowerReply.includes('data-science') || lowerReply.includes('machine learning')) {
+            dynamicActions.push({ label: 'Data Science & ML', type: 'link', url: '/courses/data-science' });
+          }
+          if (lowerReply.includes('pathway') || lowerReply.includes('pathways')) {
+            dynamicActions.push({ label: 'More Pathways', type: 'link', url: '/courses/pathways' });
+          }
           if (lowerReply.includes('college')) {
             dynamicActions.push({ label: 'College Courses', type: 'link', url: '/courses/college' });
           }
@@ -276,7 +522,7 @@ export default function FloatingChatbot() {
           if (lowerReply.includes('professional')) {
             dynamicActions.push({ label: 'Professionals Bootcamp', type: 'link', url: '/professionals' });
           }
-          if (lowerReply.includes('spoken') || lowerReply.includes('english')) {
+          if (lowerReply.includes('spoken') || lowerReply.includes('english') || lowerReply.includes('hindi')) {
             dynamicActions.push({ label: 'Spoken Skills', type: 'link', url: '/spoken-skills' });
           }
 
@@ -428,7 +674,7 @@ export default function FloatingChatbot() {
               <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg ring-2 ring-emerald-400/50 bg-[#022819]">
                 <img 
                   src={botAvatarImg} 
-                  alt="Easy AI Counselor" 
+                  alt="Mumbai Ai Counselor" 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer"
                 />
@@ -448,7 +694,7 @@ export default function FloatingChatbot() {
         <div 
           className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[calc(100vh-120px)] flex flex-col bg-white rounded-3xl shadow-2xl border border-emerald-900/15 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200"
           role="dialog"
-          aria-label="Easy AI Academia Virtual Counselor"
+          aria-label="Mumbai Ai Academia Virtual Counselor"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-[#042116] to-[#062c1e] text-white p-4 sm:p-5 flex items-center justify-between border-b border-emerald-900 shrink-0">
@@ -457,7 +703,7 @@ export default function FloatingChatbot() {
                 <div className="w-11 h-11 rounded-full overflow-hidden shadow-md ring-2 ring-emerald-400/50 shrink-0 bg-[#022819]">
                   <img 
                     src={botAvatarImg} 
-                    alt="Easy AI Counselor" 
+                    alt="Mumbai Ai Counselor" 
                     className="w-full h-full object-cover" 
                     referrerPolicy="no-referrer"
                   />
@@ -467,7 +713,7 @@ export default function FloatingChatbot() {
               <div>
                 <div className="flex items-center gap-1.5">
                   <h3 className="font-extrabold text-sm sm:text-base text-white tracking-tight">
-                    Easy AI Counselor
+                    Mumbai Ai Counselor
                   </h3>
                   <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                     AI

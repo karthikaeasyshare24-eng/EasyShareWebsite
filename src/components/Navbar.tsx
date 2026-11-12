@@ -14,7 +14,14 @@ import {
   FolderGit2, 
   Layers, 
   Users, 
-  Mail
+  Mail,
+  Code2,
+  ShieldCheck,
+  Database,
+  Compass,
+  TrendingUp,
+  Palette,
+  Cpu
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/coursesData';
 
@@ -50,6 +57,13 @@ export default function Navbar() {
     { name: 'School Students', path: '/courses/school', icon: BookOpen, desc: 'Class 5th - 12th AI literacy & study partner' },
     { name: 'College Students', path: '/courses/college', icon: GraduationCap, desc: 'GenAI foundation & career project mentorship' },
     { name: 'Working Professionals', path: '/professionals', icon: Briefcase, desc: 'AI productivity bootcamp & task automation' },
+    { name: 'AI, Coding & GenAI', path: '/courses/ai-coding', icon: Code2, desc: 'Python foundations, agentic AI, RAG & LLMs' },
+    { name: 'Cybersecurity & Ethical Hacking', path: '/courses/cybersecurity', icon: ShieldCheck, desc: 'VAPT, SOC monitoring, network & cloud security' },
+    { name: 'Data Science, ML & NLP', path: '/courses/data-science', icon: Database, desc: 'Machine learning, deep learning, NLP, CV & analytics' },
+    { name: 'Business Management', path: '/courses/business-management', icon: TrendingUp, desc: 'Operations, digital marketing & startup strategy' },
+    { name: 'Design & Creative Technology', path: '/courses/design-creative', icon: Palette, desc: 'UI/UX Figma, motion graphics & 3D creative tools' },
+    { name: 'Engineering & Robotics', path: '/courses/engineering-robotics', icon: Cpu, desc: 'Arduino robotics, IoT & CAD, drone flight control' },
+    { name: 'More Pathways to Success', path: '/courses/pathways', icon: Compass, desc: 'Investment banking, markets, tax & business' },
     { name: 'Spoken Skills (Eng / Hindi)', path: '/spoken-skills', icon: Languages, desc: 'Spoken English & everyday Hindi fluency' },
   ];
 
@@ -95,14 +109,14 @@ export default function Navbar() {
             <div className="h-12 sm:h-14 w-12 sm:w-14 rounded-2xl bg-white p-1 shadow-md shadow-emerald-950/40 group-hover:scale-105 transition-transform duration-200 flex items-center justify-center shrink-0 overflow-hidden">
               <img 
                 src="/easy-ai-academia-logo.svg" 
-                alt="Easy AI Academia Logo" 
+                alt="Mumbai Ai Academia Logo" 
                 className="w-full h-full object-contain" 
               />
             </div>
             <div>
               <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-emerald-300 transition-colors flex items-center gap-1">
-                <span>Easy</span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">AI</span>
+                <span>Mumbai</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">Ai</span>
                 <span>Academia</span>
               </span>
               <span className="hidden sm:block text-[11px] font-semibold text-emerald-300/90 -mt-0.5 tracking-wider uppercase text-[10px]">
@@ -143,7 +157,7 @@ export default function Navbar() {
 
               {coursesDropdownOpen && (
                 <div 
-                  className="absolute left-0 mt-1 w-72 bg-emerald-950 border border-emerald-800 rounded-xl shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                  className="absolute left-0 mt-1 w-80 bg-emerald-950 border border-emerald-800 rounded-xl shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150 max-h-[85vh] overflow-y-auto"
                   onMouseLeave={() => setCoursesDropdownOpen(false)}
                 >
                   <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-emerald-300/80 border-b border-emerald-800/80">
@@ -249,12 +263,12 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
             <a
               href={CONTACT_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-white bg-emerald-800/80 border border-emerald-600/40 rounded-lg hover:bg-emerald-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-white bg-emerald-800/80 border border-emerald-600/40 rounded-lg hover:bg-emerald-700 transition-colors whitespace-nowrap shrink-0"
             >
               <MessageCircle className="w-4 h-4 fill-white/20" />
               <span>WhatsApp</span>
@@ -262,7 +276,7 @@ export default function Navbar() {
 
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider text-emerald-950 bg-white hover:bg-emerald-50 rounded-lg shadow-md shadow-emerald-950/20 transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider text-emerald-950 bg-white hover:bg-emerald-50 rounded-lg shadow-md shadow-emerald-950/20 transition-all hover:scale-105 active:scale-95 whitespace-nowrap shrink-0"
             >
               Enroll Now
             </Link>
@@ -304,45 +318,22 @@ export default function Navbar() {
             Courses by Category
           </div>
 
-          <Link
-            to="/courses/school"
-            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm ${
-              location.pathname === '/courses/school' ? 'bg-emerald-800 text-white font-semibold' : 'text-emerald-100 hover:bg-emerald-900'
-            }`}
-          >
-            <BookOpen className="w-4 h-4 text-emerald-300" />
-            <span>School Students Courses</span>
-          </Link>
-
-          <Link
-            to="/courses/college"
-            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm ${
-              location.pathname === '/courses/college' ? 'bg-emerald-800 text-white font-semibold' : 'text-emerald-100 hover:bg-emerald-900'
-            }`}
-          >
-            <GraduationCap className="w-4 h-4 text-emerald-300" />
-            <span>College Students Courses</span>
-          </Link>
-
-          <Link
-            to="/professionals"
-            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm ${
-              location.pathname === '/professionals' ? 'bg-emerald-800 text-white font-semibold' : 'text-emerald-100 hover:bg-emerald-900'
-            }`}
-          >
-            <Briefcase className="w-4 h-4 text-emerald-300" />
-            <span>AI for Working Professionals</span>
-          </Link>
-
-          <Link
-            to="/spoken-skills"
-            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm ${
-              location.pathname === '/spoken-skills' ? 'bg-emerald-800 text-white font-semibold' : 'text-emerald-100 hover:bg-emerald-900'
-            }`}
-          >
-            <Languages className="w-4 h-4 text-emerald-300" />
-            <span>Spoken English & Spoken Hindi</span>
-          </Link>
+          {courseSublinks.map((sub) => {
+            const Icon = sub.icon;
+            const isSubActive = location.pathname === sub.path;
+            return (
+              <Link
+                key={sub.path}
+                to={sub.path}
+                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm ${
+                  isSubActive ? 'bg-emerald-800 text-white font-semibold' : 'text-emerald-100 hover:bg-emerald-900'
+                }`}
+              >
+                <Icon className="w-4 h-4 text-emerald-300 shrink-0" />
+                <span>{sub.name}</span>
+              </Link>
+            );
+          })}
 
           <div className="pt-2 pb-1 px-3 text-xs font-bold uppercase tracking-wider text-emerald-300">
             Guidance & Offers

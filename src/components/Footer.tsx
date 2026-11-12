@@ -54,13 +54,13 @@ export default function Footer() {
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-1.5 shadow-lg shadow-emerald-950/40 flex items-center justify-center shrink-0 overflow-hidden">
                 <img 
                   src="/easy-ai-academia-logo.svg" 
-                  alt="Easy AI Academia Logo" 
+                  alt="Mumbai Ai Academia Logo" 
                   className="w-full h-full object-contain" 
                 />
               </div>
               <div>
                 <span className="font-extrabold text-xl tracking-tight text-white block">
-                  Easy <span className="text-emerald-400">AI</span> Academia
+                  Mumbai <span className="text-emerald-400">Ai</span> Academia
                 </span>
                 <span className="text-[10px] font-semibold text-emerald-300/90 tracking-wider uppercase -mt-0.5 block">
                   Learn • Build • Grow
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-emerald-200/90 leading-relaxed font-medium">
-              Easy AI Academia — Learn AI. Build Skills. Build Your Future.
+              Mumbai Ai Academia — Learn AI. Build Skills. Build Your Future.
             </p>
             <p className="text-xs text-emerald-300/70 leading-relaxed">
               Practical AI education & career skills for students, graduates & working professionals. Transform from an AI user into an AI creator.
@@ -82,49 +82,91 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Academic & Student Programs */}
+          {/* Course Categories (All 8 Core Tracks) */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-emerald-900 pb-2">
-              Student Programs
+              Course Categories
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link to="/courses/school" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>Courses — School Students</span>
+                  <span>School Students (5th–12th)</span>
                 </Link>
               </li>
               <li>
                 <Link to="/courses/college" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>Courses — College Students</span>
+                  <span>College Students & Degree</span>
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                <Link to="/courses/ai-coding" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>Final-Year Project Assistance</span>
+                  <span>AI, Coding & GenAI</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/cybersecurity" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Cybersecurity & Ethical Hacking</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/data-science" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Data Science, ML & NLP</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/business-management" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Business Management</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/design-creative" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Design & Creative Technology</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/engineering-robotics" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Engineering & Robotics</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/pathways" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>More Pathways to Success</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/professionals" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span className="text-emerald-400">›</span>
+                  <span>Working Professionals Bootcamp</span>
                 </Link>
               </li>
               <li>
                 <Link to="/spoken-skills" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>Spoken English & Hindi</span>
+                  <span>Spoken Skills (Eng / Hindi)</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Career & Specialized Tracks */}
+          {/* Specialized Programs & About */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-emerald-900 pb-2">
-              Career & Combos
+              Specialized & Admissions
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <Link to="/professionals" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
+                <Link to="/projects" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>AI for Working Professionals</span>
+                  <span>Final-Year Project Assistance</span>
                 </Link>
               </li>
               <li>
@@ -136,13 +178,13 @@ export default function Footer() {
               <li>
                 <Link to="/about" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>About / Why Us / Coach</span>
+                  <span>About Mumbai Ai Academia</span>
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-emerald-200/80 hover:text-white transition-colors flex items-center gap-1.5">
                   <span className="text-emerald-400">›</span>
-                  <span>Contact & Admissions</span>
+                  <span>Enroll & Batch Counseling</span>
                 </Link>
               </li>
             </ul>
@@ -208,7 +250,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="mt-12 pt-6 border-t border-emerald-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
           <p>
-            © {currentYear} Easy AI Academia. All rights reserved. "AI is not the future. AI is the skill you can start learning today."
+            © {currentYear} Mumbai Ai Academia. All rights reserved. "AI is not the future. AI is the skill you can start learning today."
           </p>
           <div className="flex items-center gap-4">
             <span className="text-emerald-400">Modes: Offline • Online • Hybrid</span>

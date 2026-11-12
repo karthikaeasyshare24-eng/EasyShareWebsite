@@ -2,9 +2,9 @@ export interface CourseItem {
   id: string;
   title: string;
   subtitle?: string;
-  category: 'school' | 'college' | 'professional' | 'spoken';
-  duration: string;
-  fees: string;
+  category: 'school' | 'college' | 'professional' | 'spoken' | 'ai-coding' | 'cybersecurity' | 'data-science' | 'pathways' | 'business-management' | 'design-creative' | 'engineering-robotics';
+  duration?: string;
+  fees?: string;
   topics: string[];
   outcome?: string;
   includes?: string;
@@ -32,4 +32,16 @@ export interface ProjectIndustry {
 export interface FAQItem {
   question: string;
   answer: string;
+}
+
+export interface CourseCategory {
+  id: string;
+  name: string;
+  shortName?: string;
+  path: string;
+  iconName: string;
+  badge: string;
+  description: string;
+  targetAudience?: string;
+  courses: CourseItem[];
 }

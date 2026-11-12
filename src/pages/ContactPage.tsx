@@ -60,12 +60,12 @@ export default function ContactPage() {
   };
 
   const getWhatsAppEnquiryUrl = () => {
-    const text = `Hi Easy AI Academia,\nMy name is ${formData.name || '[My Name]'}.\nPhone: ${formData.phone || '[My Phone]'}.\nI am interested in: ${formData.course || 'AI Training'}.\nPreferred Mode: ${formData.mode}.\nMessage: ${formData.message || 'Please share details and batch timings.'}`;
+    const text = `Hi Mumbai Ai Academia,\nMy name is ${formData.name || '[My Name]'}.\nPhone: ${formData.phone || '[My Phone]'}.\nI am interested in: ${formData.course || 'AI Training'}.\nPreferred Mode: ${formData.mode}.\nMessage: ${formData.message || 'Please share details and batch timings.'}`;
     return `https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
 
   const getMailtoUrl = () => {
-    const subject = `Admission Inquiry: ${formData.course || 'Easy AI Academia'}`;
+    const subject = `Admission Inquiry: ${formData.course || 'Mumbai Ai Academia'}`;
     const body = `Name: ${formData.name}\nPhone: ${formData.phone}\nCourse: ${formData.course}\nTraining Mode: ${formData.mode}\n\nMessage:\n${formData.message}`;
     return `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -79,7 +79,7 @@ export default function ContactPage() {
             <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl overflow-hidden shadow-2xl shadow-emerald-950/70 ring-4 ring-emerald-500/20 hover:scale-105 transition-transform duration-200 bg-white p-2 flex items-center justify-center">
               <img 
                 src="/easy-ai-academia-logo.svg" 
-                alt="Easy AI Academia Logo" 
+                alt="Mumbai Ai Academia Logo" 
                 className="w-full h-full object-contain" 
               />
             </div>
@@ -383,7 +383,7 @@ export default function ContactPage() {
                   </div>
 
                   <p className="text-[11px] text-slate-400 text-center mt-3">
-                    We respect your privacy. No spam. You will only receive relevant batch information from Easy AI Academia.
+                    We respect your privacy. No spam. You will only receive relevant batch information from Mumbai Ai Academia.
                   </p>
                 </form>
               )}

@@ -35,7 +35,7 @@ export default function FloatingWhatsApp() {
         href={CONTACT_INFO.whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Easy AI Academia on WhatsApp"
+        aria-label="Chat with Mumbai Ai Academia on WhatsApp"
         className="group relative flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 sm:px-4 sm:py-3.5 rounded-full shadow-2xl hover:shadow-emerald-500/40 hover:scale-105 active:scale-95 transition-all duration-200"
       >
         <span className="relative flex h-3 w-3">

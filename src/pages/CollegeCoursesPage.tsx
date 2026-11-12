@@ -15,11 +15,11 @@ export default function CollegeCoursesPage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            🎓 AI Courses for College Students
+            🎓 AI & Generative AI for College Students
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-emerald-100/90 max-w-2xl mx-auto leading-relaxed">
-            Gain an undeniable competitive edge in placement interviews. Master prompt engineering, AI + Excel, Power BI dashboards, Python AI workflows, and live portfolio projects.
+            Gain an undeniable competitive edge in campus placements. Move beyond simple ChatGPT prompts to building functioning AI workflows, prompt engineering, and portfolio assets.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs text-emerald-200">
@@ -42,10 +42,10 @@ export default function CollegeCoursesPage() {
           </div>
           <div className="flex-1 text-center sm:text-left">
             <h4 className="text-sm font-bold text-slate-900">
-              Campus Placement & Interview Acceleration
+              Campus Placement & Industry Acceleration
             </h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-              Every college module is geared toward interview discussions. Build working Git repositories, publish live demonstrations, and showcase verified AI competency.
+              Every course is geared toward real-world application. Build working Git repositories, publish live projects, and earn verified certifications.
             </p>
           </div>
           <Link
@@ -57,7 +57,7 @@ export default function CollegeCoursesPage() {
           </Link>
         </div>
 
-        {/* 2 College Courses Grid */}
+        {/* 2 College Courses Grid: Side-by-side on desktop, stacked on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {COLLEGE_COURSES.map((course, idx) => (
             <CourseCard 

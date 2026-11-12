@@ -44,17 +44,23 @@ export default function CourseCard({ course, highlight = false }: CourseCardProp
         </div>
 
         {/* Pricing & Duration Bar */}
-        <div className="mt-5 flex flex-wrap items-center gap-3 p-3 bg-emerald-50/50 rounded-xl border border-emerald-100/80">
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
-            <Clock className="w-4 h-4 text-emerald-600" />
-            <span>Duration: <strong className="text-slate-900">{course.duration}</strong></span>
+        {(course.duration || course.fees) ? (
+          <div className="mt-5 flex flex-wrap items-center gap-3 p-3 bg-emerald-50/50 rounded-xl border border-emerald-100/80">
+            {course.duration && (
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
+                <Clock className="w-4 h-4 text-emerald-600" />
+                <span>Duration: <strong className="text-slate-900">{course.duration}</strong></span>
+              </div>
+            )}
+            {course.duration && course.fees && <span className="text-emerald-300">|</span>}
+            {course.fees && (
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
+                <Tag className="w-4 h-4 text-emerald-600" />
+                <span>Fees: <strong className="text-emerald-800 text-sm font-bold">{course.fees}</strong></span>
+              </div>
+            )}
           </div>
-          <span className="text-emerald-300">|</span>
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
-            <Tag className="w-4 h-4 text-emerald-600" />
-            <span>Fees: <strong className="text-emerald-800 text-sm font-bold">{course.fees}</strong></span>
-          </div>
-        </div>
+        ) : null}
 
         {/* Topics List */}
         <div className="mt-6">
